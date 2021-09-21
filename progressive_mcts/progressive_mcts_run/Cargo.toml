@@ -1,0 +1,17 @@
+
+[package]
+name = "progressive_mcts_run"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+progressive_mcts = { path = "../progressive_mcts" }
+approx = "0.5.0"
+fstrings = "0.2.3"
+itertools = "0.10.1"
+rand = "0.8.3"
+rand_distr = "0.4.0"
+rayon = "1.5.1"
+rolling-stats = "0.4"
+rusqlite = "0.25.3"
+paste = "1.0.5"

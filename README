@@ -1,0 +1,7 @@
+Source code for the paper submission Monte-Carlo Policy-Tree Decision Making
+
+To generate the figures from the paper, make sure that Rust is installed, and also sqlite3.
+Then run `./make_all_figures.sh`, which will compile both programs and generate figures for them.
+
+While this should not take too long for the abstract problem in progressive_mcts, it may take many hours for the main selfdriving problem.
+The work can be split between multiple computers however. See the `./make_all_figures.sh` script for more details.

@@ -1,0 +1,102 @@
+max_steps = 3000
+n_cars = 13
+method = "mcts"
+use_cfb = false
+
+physics_dt = 0.01
+replan_dt = 0.25
+nonego_policy_change_prob = 0.05
+nonego_policy_change_dt = 0.2
+lane_change_time = 2.0
+
+thread_limit = 0
+rng_seed = 0
+run_fast = false
+load_and_record_results = true
+is_single_run = false
+graphics_speedup = 8
+graphics_for_paper = true
+debug_car_i = -9
+debug_steps_before = 5
+super_debug = true
+ego_policy_change_debug = false
+ego_state_debug = false
+separation_debug = false
+intelligent_driver_debug = false
+belief_debug = false
+cfb_debug = false
+obstacle_car_debug = false
+policy_report_debug = true
+ego_traces_debug = true
+
+only_ego_crashes_in_forward_sims = true
+only_crashes_with_ego = true
+obstacles_only_for_ego = true
+true_belief_sample_only = false
+
+[spawn]
+remove_ahead_beyond = 200.0
+remove_behind_beyond = 100.0
+place_ahead_beyond = 100.0
+
+[belief]
+different_lane_prob = 0.2
+different_longitudinal_prob = 0.8
+decelerate_prior_prob = 0.2
+accelerate_delta_vel_thresh = 2.0
+accelerate_ahead_dist_thresh = 10.0
+decelerate_vel_thresh = 4.0
+finished_waiting_dy = 0.5
+skips_waiting_prob = 0.1
+
+[cost]
+efficiency_speed_cost = 1.0
+efficiency_weight = 1.0
+safety_weight = 600.0       # was 150
+safety_margin_low = 0.0     # bounded by lane width 3.7 - prius width 1.76 = 1.94; previous was 0.44
+safety_margin_high = 2.4
+logistic_map_low = 5.0
+logistic_map_high = -7.0
+accel_weight = 0.1
+steer_weight = 20.0         # was 10.0
+discount_factor = 0.8       # per second, 0.85
+
+[cfb]
+key_vehicle_base_dist = 10.0
+key_vehicle_dist_time = 8.0
+uncertainty_threshold = 0.3
+max_n_for_cartesian_product = 4
+dt = 0.2
+horizon_t = 8.0
+
+[tree]
+dt = 0.2
+layer_t = 2.667
+search_depth = 3
+samples_n = 8
+
+[mpdm]
+dt = 0.2
+forward_t = 8.0
+samples_n = 16
+
+[eudm]
+dt = 0.2
+layer_t = 2.0
+samples_n = 16
+search_depth = 4
+allow_different_root_policy = true
+
+[mcts]
+dt = 0.2
+layer_t = 2.0
+search_depth = 4
+total_forward_t = 8.0
+samples_n = 64
+prefer_same_policy = true
+bound_mode = "marginal"
+selection_mode = "klucb"
+ucb_const = 1.5
+klucb_max_cost = 4.7
+repeat_const = 32768
+most_visited_best_cost_consistency = true

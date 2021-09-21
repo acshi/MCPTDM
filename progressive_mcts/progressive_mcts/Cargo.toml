@@ -1,0 +1,16 @@
+
+[package]
+name = "progressive_mcts"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+approx = "0.5.0"
+fstrings = "0.2.3"
+itertools = "0.10.1"
+rand = "0.8.3"
+rand_distr = "0.4.0"
+rayon = "1.5.1"
+rolling-stats = "0.4"
+num-traits = "0.2.14"
+serde = "1.0.126"
